@@ -2,7 +2,7 @@
  * #%L
  * ACS AEM Commons Bundle
  * %%
- * Copyright (C) 2014 Adobe
+ * Copyright (C) 2015 Adobe
  * %%
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,8 +17,16 @@
  * limitations under the License.
  * #L%
  */
-/**
- * Image utilities.
- */
-@aQute.bnd.annotation.Version("1.4.0")
+
 package com.adobe.acs.commons.images;
+
+import java.io.IOException;
+
+import javax.jcr.RepositoryException;
+
+import org.apache.sling.api.resource.ResourceResolver;
+
+public interface PageScreenshotTaker {
+
+	public void screenshotPublishedPage(ResourceResolver resourceResolver, String pagePath) throws IOException, InterruptedException, RepositoryException;
+}
